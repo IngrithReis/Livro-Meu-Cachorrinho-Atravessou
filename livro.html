@@ -77,8 +77,8 @@
                 </div>
             </div>
             <div>
-                <img src="./imagens/capa_livro.jpg"style="width: 150px; height: auto; alt="Foto da capa" ></li>
-                <img src ="imagens/Sobre_nos_page-0001 (1).jpg" alt = "sobre os escritores e ilustradores" style="width: 150px; height: auto;">
+                <img src="./imagens/capa_livro.jpg"style="width: 150px; height: auto; onclick="expandImage(this)" alt="Foto da capa"></li>
+                <img src ="imagens/Sobre_nos_page-0001 (1).jpg" alt = "sobre os escritores e ilustradores" style="width: 150px; height: auto;" onclick="expandImage(this)">
 
             </div>
             </div>    
@@ -94,6 +94,28 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+    function expandImage(imgElement) {
+        // Cria um efeito de ampliação para a imagem
+        const expandedImg = document.createElement("img");
+        expandedImg.src = imgElement.src;
+        expandedImg.style.position = "fixed";
+        expandedImg.style.top = "50%";
+        expandedImg.style.left = "50%";
+        expandedImg.style.transform = "translate(-50%, -50%)";
+        expandedImg.style.zIndex = "1000"; // Coloca a imagem ampliada no topo
+        expandedImg.style.maxWidth = "90%";
+        expandedImg.style.maxHeight = "90%";
+        expandedImg.style.boxShadow = "0px 0px 10px rgba(0, 0, 0, 0.5)";
+    
+        document.body.appendChild(expandedImg);
+    
+        // Adiciona evento de fechar ao clicar na imagem ampliada
+        expandedImg.onclick = function() {
+            document.body.removeChild(expandedImg);
+        };
+    }
+</script>
 
 
 </html>
