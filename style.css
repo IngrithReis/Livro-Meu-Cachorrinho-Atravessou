@@ -1,119 +1,176 @@
+/* NAVBAR */
 .navbar {
-    padding-top: 5px;  /* Diminuindo o padding superior */
-    padding-bottom: 5px;  /* Diminuindo o padding inferior */
-    position: relative;
+    position: fixed;
+    top: 0;
+    width: 100%;
     background-color: rgb(70, 140, 231);
-
-
-    
+    padding: 0.75rem 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1030;
 }
 
-
-/* Ajustando o tamanho das fontes e o espaçamento dos itens da navbar */
-.navbar-nav .nav-item .nav-link {
-    padding-top: 8px; /* Ajustando o padding superior dos links */
-    padding-bottom: 8px; /* Ajustando o padding inferior dos links */
-    font-size: 24px; /* Ajustando o tamanho da fonte */
-    color: #000000;
-}
-.span.nav-toggler-item{
-    
-    border-radius: 3px;
-    
-}
-.navbar-toggler:focus {
-    outline: none; /* Remove o contorno ao focar no botão */
-    box-shadow: none; /* Remove qualquer sombra (como borda) ao focar */
-    border: none; /* Remove qualquer borda, caso haja */
-}
-.navbar-toggler{
+.navbar-toggler {
     border: none;
+    outline: none;
+    padding: 0.25rem 0.5rem;
 }
-.icone-navbar{
-    width: 100px ;
-    height: auto;  /* Mantém a proporção da imagem */
-    object-fit: contain; 
+
+.navbar-toggler-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* Ícone customizado */
+.icone-navbar {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
     vertical-align: middle;
     margin-bottom: 20px;
 }
 
-
-
-img.img-fluid.rounded-circle {
-    width: 300px; /* Definindo o tamanho da imagem */
-    height: 300px;
-    object-fit: cover; /* Garante que a imagem seja cortada de forma proporcional */
-    margin-bottom: 20px; /* Espaço abaixo da imagem */
+/* FOOTER */
+.footer-aquamarine {
+    background-color: rgb(70, 140, 231);
+    color: white;
+    width: 100%;
+    padding: 2rem 1rem; /* Aumentei um pouco para ficar mais espaçoso */
+    text-align: center;
+    margin-top: auto;
+    flex-shrink: 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
-.img-certificate {
-    width: 200px; /* Tamanho inicial da imagem */
-    height: auto;
+
+.footer-aquamarine a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer-aquamarine a:hover {
+    color: #eee;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1.1rem;
+        padding: 0.8rem;
+    }
+
+    .icone-navbar {
+        width: 60px;
+        margin-bottom: 10px;
+    }
+
+    img.img-fluid.rounded-circle {
+        width: 180px;
+        height: 180px;
+    }
+
+    .img-game {
+        width: 100%;
+        height: auto;
+    }
+
+    .container {
+        margin-top: 100px;
+    }
+}
+
+/* GERAL */
+body {
+    background-color: rgb(255, 243, 223);
+    padding-top: 75px; /* Espaço para navbar fixa */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.container {
+    margin-top: 90px;
+}
+
+/* Imagens */
+img.img-fluid.rounded-circle {
+    width: 300px;
+    height: 300px;
     object-fit: cover;
     margin-bottom: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-    transition: transform 0.3s ease; /* Transição suave para o efeito de zoom */
+}
+
+.img-certificate {
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+    margin: 0 20px 20px 20px;
+    transition: transform 0.3s ease;
 }
 
 .img-certificate:hover {
-    transform: scale(1.5); /* Aumenta a imagem quando o mouse passa sobre ela */
+    transform: scale(1.5);
 }
 
-.img-border{
+.img-border {
     margin-left: 20px;
 }
-/* Ajuste de margem na parte superior para a área de conteúdo */
-.container {
-    margin-top: 80px; /* Ajusta a distância para a navbar fixa */
+
+.img-game {
+    width: 500px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 20px;
 }
 
-/* Footer */
-.footer-aquamarine {
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    background-color: rgb(70, 140, 231);
-}
-.row a{
-    margin-top: 10px;
-    text-decoration: none;
-     color: #000000;
-     
-}
+/* Links e botões */
 .custom-link {
     display: inline-block;
     padding: 10px 20px;
     font-size: 16px;
     color: #fff;
-    
-    background-color: #fad46b; /* Cor de fundo do botão */
+    background-color: #fad46b;
     border-radius: 5px;
-    text-decoration: none; /* Remover o sublinhado */
+    text-decoration: none;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .custom-link:hover {
-    background-color: #0056b3; /* Cor de fundo quando passar o mouse */
-    transform: scale(1.05); /* Aumenta um pouco o tamanho do botão */
+    background-color: #0056b3;
+    transform: scale(1.05);
 }
-.center-title {
-    text-align: center; /* Centraliza o texto horizontalmente */
-    margin-top: 100px; /* Dá um pequeno espaço de topo */
-}
-.img-game{
-    width: 500px; /* Definindo o tamanho da imagem */
-    height: 200px;
-    object-fit: cover; /* Garante que a imagem seja cortada de forma proporcional */
-    margin-bottom: 20px; 
 
+/* Centralizar título */
+.center-title {
+    text-align: center;
+    margin-top: 100px;
 }
-.politica{
+
+/* Política de privacidade ou observações */
+.politica {
     margin-left: 40px;
 }
-body{
-    background-color: rgb(255, 243, 223)
-
-    ;
+main {
+    flex: 1 0 auto; /* Faz o main crescer e empurra o footer para o fim */
 }
+html, body {
+    height: 100%;
+    margin: 0;
+  }
