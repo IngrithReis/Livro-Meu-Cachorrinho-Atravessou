@@ -21,6 +21,11 @@
     border-radius: 3px;
     
 }
+}
+.flex-column {
+    -ms-flex-direction: column!important;
+    flex-direction: column !important;
+}
 .navbar-toggler:focus {
     outline: none; /* Remove o contorno ao focar no botão */
     box-shadow: none; /* Remove qualquer sombra (como borda) ao focar */
